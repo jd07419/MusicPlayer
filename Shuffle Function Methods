@@ -1,0 +1,35 @@
+using System.Collections;
+
+public class shuffleClass
+{
+    int cap = 10;
+    int seq = 0;
+    int currentSongPointer = 3;
+    ArrayList<int> album = new ArrayList<int>();
+
+    ArrayList<int> shuffle()
+    {
+        for(int i = 0; i <cap; i++)
+        {
+            album.Add(seq);
+            seq++;
+        }
+
+        album.Remove(currentSongPointer);
+        Collections.shuffle(album);
+        album.Add(0, currentSongPointer);
+        println(album);
+        return album;
+    }
+
+    ArrayList<int> undo()
+    {
+        for (int i = currentSongPointer; i < album.GetRange; i++)
+        {
+            album.Add(i);
+        }
+        println(album);
+        return album;
+        
+	}
+}
